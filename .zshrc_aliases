@@ -1,0 +1,8 @@
+# macOS aliasses
+if [[ $OSTYPE == darwin* ]]; then
+alias flush='dscacheutil -flushcache'
+# Apps
+alias browse="open -a /Applications/Google\ Chrome.app"
+# * Browse Azure Portal
+alias azure="browse https://preview.portal.azure.com"
+fi
