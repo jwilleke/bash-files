@@ -6,3 +6,10 @@ alias browse="open -a /Applications/Google\ Chrome.app"
 # * Browse Azure Portal
 alias azure="browse https://preview.portal.azure.com"
 fi
+
+# Linux aliasses 
+# History
+alias h='fc -l'
+alias j=jobs
+alias m=$PAGER
+alias ll='ls -laFo'
