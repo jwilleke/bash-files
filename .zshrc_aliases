@@ -1,15 +1,48 @@
+# These work on both Linux and macOS
+  alias ll='/bin/ls -lah --color=auto'
+  alias la='/bin/ls -A --color=auto'
+  alias l='/bin/ls -CF --color=auto'
+  alias cls='clear'
+  alias h='history'
+  alias nslookup='nslookup -sil'
+  alias path='echo PATH=$PATH'
+  alias home='cd ~'
+  alias pg='ps aux | less'
+  alias mountedinfo='df -hT'
+  alias ping='ping -c 10'
+  alias openports='netstat -nape --inet'
+  alias un='tar -zxvf'
+
+
 # macOS aliasses
 if [[ $OSTYPE == darwin* ]]; then
-alias flush='dscacheutil -flushcache'
-# Apps
-alias browse="open -a /Applications/Google\ Chrome.app"
-# * Browse Azure Portal
-alias azure="browse https://preview.portal.azure.com"
+  alias flush='dscacheutil -flushcache'
+  alias ps='ps aux'
+  alias mountedinfo='df -h'
+  alias ns='netstat -aln -p tcp  | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2'
+  alias du1='du -h -d1'
+  # Apps
+  alias browse="open -a /Applications/Google\ Chrome.app"
+  # Browse Azure Portal
+  # alias azure="browse https://preview.portal.azure.com"
 fi
 
-# Linux aliasses 
-# History
-alias h='fc -l'
-alias j=jobs
-alias m=$PAGER
-alias ll='ls -laFo'
+##########################################################
+# Alias's to modified commands
+##########################################################
+# Common Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+# if [ -f ~/.bash_aliases ]; then
+#     . ~/.bash_aliases
+# fi
+
+if [[ $OSTYPE == linux-gnu ]]; then
+  # may not work on all systems
+  alias mess='tail -f -n25 /var/log/messages'
+  alias ps='ps auxf'
+  alias ns='netstat -alnp --protocol=inet | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2'
+  alias du1='du -h --max-depth=1'
+  alias ns='netstat -aln -p tcp  | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2'
+fi

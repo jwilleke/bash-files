@@ -15,18 +15,14 @@ bindkey "^[[3~" delete-char
 
 # Uncomment this and comment the above to enable the builtin vi(1) command
 # line editor in sh(1), e.g. ESC to go into visual mode.
-xset -o vi
+# set -o vi
 
-if [[ -f ~/.zshrc_aliases ]]; then
-. ~/.zshrc_aliases
-fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.zshrc_aliases, instead of adding them here directly.
+if [[ -f ~/.zshrc_aliases ]]; then
+. ~/.zshrc_aliases
+fi
 
-# some useful aliases
-alias h='fc -l'
-alias j=jobs
-alias m=$PAGER
-alias ll='ls -laFo'
+## Default .zshrc filr ending here
