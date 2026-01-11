@@ -1,3 +1,12 @@
+# macOS aliasses
+if [[ $OSTYPE == darwin* ]]; then
+alias flush='dscacheutil -flushcache'
+# Apps
+alias browse="open -a /Applications/Google\ Chrome.app"
+# * Browse Azure Portal
+alias azure="browse https://preview.portal.azure.com"
+fi
+
 ##########################################################
 # Alias's to modified commands
 ##########################################################
@@ -26,11 +35,3 @@ alias ping='ping -c 10'
 alias openports='netstat -nape --inet'
 alias ns='netstat -alnp --protocol=inet | grep -v CLOSE_WAIT | cut -c-6,21-94 | tail +2'
 alias du1='du -h --max-depth=1'
-#alias myntpdate='ntpdate -q time.willeke.com'
-#alias -ddate='date "+%Y-%m-%d %A    %T %Z"'
-# alias nds='ndsmanage'
-#alias myntpdate='ntpdate -q time.willeke.com'
-#alias -ddate='date "+%Y-%m-%d %A    %T %Z"'
-# alias nds='ndsmanage'
-# alias kubectl='k3s kubectl'
-alias kctl='microk8s kubectl'
